@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://rtli.github.io">
-  <title>lastLetter | Rtli&#39;s Blog</title>
+  <title>Git | Rtli&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="写在开头 撰写这样一篇文章是因为世事无常，有些担心；我并没有自杀倾向。">
+  <meta name="description" content="使用 git reflog 查看操作记录，git log 查看提交记录。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="lastLetter">
-<meta property="og:url" content="https://rtli.github.io/2020/11/15/lastLetter/index.html">
+<meta property="og:title" content="Git">
+<meta property="og:url" content="https://rtli.github.io/2021/05/09/about_git/index.html">
 <meta property="og:site_name" content="Rtli&#39;s Blog">
-<meta property="og:description" content="写在开头 撰写这样一篇文章是因为世事无常，有些担心；我并没有自杀倾向。">
+<meta property="og:description" content="使用 git reflog 查看操作记录，git log 查看提交记录。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-11-15T11:32:18.000Z">
-<meta property="article:modified_time" content="2021-10-06T11:42:02.506Z">
+<meta property="article:published_time" content="2021-05-09T10:14:32.000Z">
+<meta property="article:modified_time" content="2021-10-03T13:12:25.828Z">
 <meta property="article:author" content="Rtli">
+<meta property="article:tag" content="tech">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Rtli&#39;s Blog" type="application/atom+xml">
@@ -140,48 +141,79 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-lastLetter" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-about_git" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      lastLetter
+      Git
     </h1>
   
 
         
-        <a href="/2020/11/15/lastLetter/" class="archive-article-date">
-  	<time datetime="2020-11-15T11:32:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-15</time>
+        <a href="/2021/05/09/about_git/" class="archive-article-date">
+  	<time datetime="2021-05-09T10:14:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1>写在开头</h1>
-<p>撰写这样一篇文章是因为世事无常，有些担心；我并没有自杀倾向。</p>
+        <p>使用 git reflog 查看操作记录，git log 查看提交记录。</p>
 <span id="more"></span>
-<h1>正文</h1>
-<p>致所有爱我的人：</p>
-<p>​	别太难过，实际上这也与我无关了，但我还是希望你不要太难过。</p>
-<p>特别地，致我的母亲：</p>
-<p>​	这对你来说也算一种解脱吧，希望你能以自我为中心，好好地走下去。发生这种事我也很抱歉。<br>
- </p>
-<p align="right">2020.11.15(YYYY.MM.DD)</p>
+<ul>
+<li>
+<p>版本回退<br>
+使用 git reset --hard commit_id 来回退版本</p>
+</li>
+<li>
+<p>add/commit<br>
+git add filename: 添加文件到暂存区<br>
+git commit -m “comments”: 提交暂存区文件到版本库</p>
+</li>
+<li>
+<p>关于撤销<br>
+场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout – file。  场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD <file>，就回到了场景1，第二步按场景1操作。</p>
+</li>
+<li>
+<p>删除文件<br>
+命令git rm用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，但是要小心，你只能恢复文件到最新版本，你会丢失最近一次提交后你修改的内容。</p>
+</li>
+<li>
+<p>和远程库交互</p>
+<ul>
+<li>把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。如 git push -u origin master</li>
+<li>把远程库的内容克隆到本地，用git clone命令。git clone <a href="mailto:git@github.com">git@github.com</a>:xxxx/xxxx.git</li>
+</ul>
+</li>
+<li>
+<p>查看远端仓库地址</p>
+<ul>
+<li>git remote -v</li>
+</ul>
+</li>
+</ul>
+
       
 
       
     </div>
     <div class="article-info article-info-index">
       
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
-        </div>
       
-      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">tech</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -232,7 +264,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://rtli.github.io/2020/11/15/lastLetter/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://rtli.github.io/2021/05/09/about_git/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -246,15 +278,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/01/12/first/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/05/15/mental_state/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          first-blog
+          偶感
         
       </div>
     </a>
   
+  
+    <a href="/2021/05/05/roommate_quotes/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">大学舍友语录集</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
