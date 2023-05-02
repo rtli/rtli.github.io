@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://rtli.github.io">
-  <title>Git | Rtli&#39;s Blog</title>
+  <title>CD转码 | Rtli&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="GitHub 的 Pull Request 和 GitLab 的 Merge Request 实际上是一个东西">
+  <meta name="description" content="从互联网获得了一张王菲《十万个为什么》的原盘，采样率和比特率都非常高，但.dff格式受支持情况不是很理想，就考虑将其转一份成.flac格式的，摸索了一下，使用 FFmpeg 可以较好地完成这个任务。批处理文件内容如下。可将同目录下的*.dff全部转换成*.flac。 123@echo offfor %%i in (*.dff) do (ffmpeg -i &quot;%%i&quot; -af &amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git">
-<meta property="og:url" content="https://rtli.github.io/2021/05/09/about_git/index.html">
+<meta property="og:title" content="CD转码">
+<meta property="og:url" content="https://rtli.github.io/2022/01/22/dff2flac/index.html">
 <meta property="og:site_name" content="Rtli&#39;s Blog">
-<meta property="og:description" content="GitHub 的 Pull Request 和 GitLab 的 Merge Request 实际上是一个东西">
+<meta property="og:description" content="从互联网获得了一张王菲《十万个为什么》的原盘，采样率和比特率都非常高，但.dff格式受支持情况不是很理想，就考虑将其转一份成.flac格式的，摸索了一下，使用 FFmpeg 可以较好地完成这个任务。批处理文件内容如下。可将同目录下的*.dff全部转换成*.flac。 123@echo offfor %%i in (*.dff) do (ffmpeg -i &quot;%%i&quot; -af &amp;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-09T10:14:32.000Z">
-<meta property="article:modified_time" content="2023-01-01T03:41:41.343Z">
+<meta property="article:published_time" content="2022-01-22T11:52:41.000Z">
+<meta property="article:modified_time" content="2023-01-01T03:35:19.592Z">
 <meta property="article:author" content="Rtli">
 <meta property="article:tag" content="tech">
 <meta name="twitter:card" content="summary">
@@ -141,52 +141,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-about_git" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-dff2flac" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Git
+      CD转码
     </h1>
   
 
         
-        <a href="/2021/05/09/about_git/" class="archive-article-date">
-  	<time datetime="2021-05-09T10:14:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-09</time>
+        <a href="/2022/01/22/dff2flac/" class="archive-article-date">
+  	<time datetime="2022-01-22T11:52:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="GitHub-的-Pull-Request-和-GitLab-的-Merge-Request-实际上是一个东西">GitHub 的 Pull Request 和 GitLab 的 Merge Request 实际上是一个东西</h4>
-<span id="more"></span>
-<h3 id="基本版本管理">基本版本管理</h3>
-<p>版本回退使用 <code>git reset  commit_id</code> 来回退版本</p>
-<p>添加文件到暂存区: <code>git add filename</code>, 通常直接使用 <code>git add .</code> 添加所有有修改的文件</p>
-<p>提交暂存区文件到版本库: <code>git commit -m &quot;comments&quot;</code></p>
-<p>当执行 <code>git commit</code> 后仍需本地修改，可在修改完后执行 <code>git add . &amp;&amp; git commit --amend</code> 以使得修改合并入一个 commit 记录中。</p>
-<h3 id="关于撤销">关于撤销</h3>
-<p>改乱了工作区某个文件的内容，想直接丢弃工作区的修改时。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout `filename`</span><br></pre></td></tr></table></figure>
-<p>不但改乱了工作区某个文件的内容，还添加到了暂存区。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD `filename`</span><br><span class="line">git checkout `filename`</span><br></pre></td></tr></table></figure>
-<p>在自己的分支上写东西的时候 master 上有更新</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git pull origin master</span><br><span class="line">git checkout `your_branch`</span><br><span class="line">git rebase master</span><br></pre></td></tr></table></figure>
-<p>暂存修改</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br><span class="line">git stash pop</span><br></pre></td></tr></table></figure>
-<h3 id="和远端库交互">和远端库交互</h3>
-<p>把本地库的内容推送到远端，用git push命令，实际上是把当前分支master推送到远端。如 <code>git push -u origin master</code></p>
-<p>自动设置远端分支: <code>git config --global push.default current</code></p>
-<p>修改远端仓库的地址: <code>git remote set-url origin new.git.url/here</code></p>
-<p>把远端库的内容克隆到本地，用git clone命令。git clone <a href="mailto:git@github.com">git@github.com</a>:xxxx/xxxx.git</p>
-<p>查看远端仓库地址: <code>git remote -v</code></p>
-<h3 id="其他技巧">其他技巧</h3>
-<p>使用 <code>git reflog</code> 查看操作记录，<code>git log</code> 查看提交记录。</p>
-<p>设置命令别名: <code> git config --global alias.co checkout</code></p>
-<p>查看所有配置: <code>git config --list</code></p>
+        <p>从互联网获得了一张王菲《十万个为什么》的原盘，采样率和比特率都非常高，但<code>.dff</code>格式受支持情况不是很理想，就考虑将其转一份成<code>.flac</code>格式的，摸索了一下，使用 FFmpeg 可以较好地完成这个任务。批处理文件内容如下。可将同目录下的<code>*.dff</code>全部转换成<code>*.flac</code>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="keyword">for</span> %%i <span class="keyword">in</span> (*.dff) <span class="keyword">do</span> (ffmpeg -i <span class="string">&quot;%%i&quot;</span> -af <span class="string">&quot;lowpass=24000, volume=6dB&quot;</span> -sample_fmt s16 -ar 96000 %%~ni.flac )</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，文件名中有空格会出问题，这应该是可以解决的，但我没继续折腾了。</p>
 
       
 
@@ -256,7 +233,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://rtli.github.io/2021/05/09/about_git/" alt="微信分享二维码">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://rtli.github.io/2022/01/22/dff2flac/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -270,18 +247,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/05/15/mental_state/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/01/28/muji/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          偶感
+          MUJI,MUJI.
         
       </div>
     </a>
   
   
-    <a href="/2021/05/05/roommate_quotes/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">大学舍友语录集</div>
+    <a href="/2021/12/24/causeries/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">随笔</div>
       <i class="icon-circle-right"></i>
     </a>
   

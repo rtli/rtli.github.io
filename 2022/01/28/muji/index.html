@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://rtli.github.io">
-  <title>Git | Rtli&#39;s Blog</title>
+  <title>MUJI,MUJI. | Rtli&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="GitHub 的 Pull Request 和 GitLab 的 Merge Request 实际上是一个东西">
+  <meta name="description" content="《一代宗师》上映之际，我和同学们也去支持了一下，电影很好看。开场前，有同学说要买点笔，我们一行人就到电影院斜对面的无印良品去逛了逛，但似乎只有我是首次走进这家商店。尽管过去了很久，简洁昂贵又印满日文的文具和禁止坐卧标志后的沙发样品给我带来的冲击感还是非常深刻而直接的。同学教我怎么算价格: 印着100円的笔就是10块钱，大抵就是除以十。让我感到最不能理解的是一个简单的塑料笔盒动辄卖四五十，而当时的我">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git">
-<meta property="og:url" content="https://rtli.github.io/2021/05/09/about_git/index.html">
+<meta property="og:title" content="MUJI,MUJI.">
+<meta property="og:url" content="https://rtli.github.io/2022/01/28/muji/index.html">
 <meta property="og:site_name" content="Rtli&#39;s Blog">
-<meta property="og:description" content="GitHub 的 Pull Request 和 GitLab 的 Merge Request 实际上是一个东西">
+<meta property="og:description" content="《一代宗师》上映之际，我和同学们也去支持了一下，电影很好看。开场前，有同学说要买点笔，我们一行人就到电影院斜对面的无印良品去逛了逛，但似乎只有我是首次走进这家商店。尽管过去了很久，简洁昂贵又印满日文的文具和禁止坐卧标志后的沙发样品给我带来的冲击感还是非常深刻而直接的。同学教我怎么算价格: 印着100円的笔就是10块钱，大抵就是除以十。让我感到最不能理解的是一个简单的塑料笔盒动辄卖四五十，而当时的我">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-09T10:14:32.000Z">
-<meta property="article:modified_time" content="2023-01-01T03:41:41.343Z">
+<meta property="article:published_time" content="2022-01-28T15:53:59.000Z">
+<meta property="article:modified_time" content="2023-01-01T03:35:19.593Z">
 <meta property="article:author" content="Rtli">
-<meta property="article:tag" content="tech">
+<meta property="article:tag" content="杂谈">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Rtli&#39;s Blog" type="application/atom+xml">
@@ -141,52 +141,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-about_git" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-muji" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Git
+      MUJI,MUJI.
     </h1>
   
 
         
-        <a href="/2021/05/09/about_git/" class="archive-article-date">
-  	<time datetime="2021-05-09T10:14:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-09</time>
+        <a href="/2022/01/28/muji/" class="archive-article-date">
+  	<time datetime="2022-01-28T15:53:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="GitHub-的-Pull-Request-和-GitLab-的-Merge-Request-实际上是一个东西">GitHub 的 Pull Request 和 GitLab 的 Merge Request 实际上是一个东西</h4>
+        <p>《一代宗师》上映之际，我和同学们也去支持了一下，电影很好看。开场前，有同学说要买点笔，我们一行人就到电影院斜对面的无印良品去逛了逛，但似乎只有我是首次走进这家商店。尽管过去了很久，简洁昂贵又印满日文的文具和禁止坐卧标志后的沙发样品给我带来的冲击感还是非常深刻而直接的。同学教我怎么算价格: 印着<code>100円</code>的笔就是10块钱，大抵就是除以十。让我感到最不能理解的是一个简单的塑料笔盒动辄卖四五十，而当时的我一来对钱没有概念，最奢侈的消费就是体育课后的运动饮料；二来笔盒里基本都是在批发市场采购的几十元几十只的圆珠笔，也就没有勇气提问了。</p>
 <span id="more"></span>
-<h3 id="基本版本管理">基本版本管理</h3>
-<p>版本回退使用 <code>git reset  commit_id</code> 来回退版本</p>
-<p>添加文件到暂存区: <code>git add filename</code>, 通常直接使用 <code>git add .</code> 添加所有有修改的文件</p>
-<p>提交暂存区文件到版本库: <code>git commit -m &quot;comments&quot;</code></p>
-<p>当执行 <code>git commit</code> 后仍需本地修改，可在修改完后执行 <code>git add . &amp;&amp; git commit --amend</code> 以使得修改合并入一个 commit 记录中。</p>
-<h3 id="关于撤销">关于撤销</h3>
-<p>改乱了工作区某个文件的内容，想直接丢弃工作区的修改时。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout `filename`</span><br></pre></td></tr></table></figure>
-<p>不但改乱了工作区某个文件的内容，还添加到了暂存区。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD `filename`</span><br><span class="line">git checkout `filename`</span><br></pre></td></tr></table></figure>
-<p>在自己的分支上写东西的时候 master 上有更新</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git pull origin master</span><br><span class="line">git checkout `your_branch`</span><br><span class="line">git rebase master</span><br></pre></td></tr></table></figure>
-<p>暂存修改</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br><span class="line">git stash pop</span><br></pre></td></tr></table></figure>
-<h3 id="和远端库交互">和远端库交互</h3>
-<p>把本地库的内容推送到远端，用git push命令，实际上是把当前分支master推送到远端。如 <code>git push -u origin master</code></p>
-<p>自动设置远端分支: <code>git config --global push.default current</code></p>
-<p>修改远端仓库的地址: <code>git remote set-url origin new.git.url/here</code></p>
-<p>把远端库的内容克隆到本地，用git clone命令。git clone <a href="mailto:git@github.com">git@github.com</a>:xxxx/xxxx.git</p>
-<p>查看远端仓库地址: <code>git remote -v</code></p>
-<h3 id="其他技巧">其他技巧</h3>
-<p>使用 <code>git reflog</code> 查看操作记录，<code>git log</code> 查看提交记录。</p>
-<p>设置命令别名: <code> git config --global alias.co checkout</code></p>
-<p>查看所有配置: <code>git config --list</code></p>
+<p>时间无需通知我们就可以改变一切，近十年后的今天，商场的二期建成开业，与一期通过空中连廊融为一体；承载了我许多银幕回忆的影院也到期不续租，更换了名称。但无印良品的招牌还是简洁地亮着，这就足以使偶然路过的我走进。十年真的可以改变很多，彼时全是日文的标签现在大部分印着简体中文，价格(甚至)也同比有所下降。店员热情了很多，沙发也可以给顾客小憩了。我显然没有做好拥抱这一切的准备，简单逛了一会儿便带着生意不好做云云的感慨离开了。岁月最是无情，但也公正。</p>
+<p>当我再次步入这家商店时，我想看到什么?</p>
 
       
 
@@ -200,7 +178,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">tech</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂谈</a>
         		</li>
       		
 		</ul>
@@ -256,7 +234,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://rtli.github.io/2021/05/09/about_git/" alt="微信分享二维码">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://rtli.github.io/2022/01/28/muji/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -270,18 +248,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/05/15/mental_state/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/04/03/sync_solution/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          偶感
+          博客的同步方法
         
       </div>
     </a>
   
   
-    <a href="/2021/05/05/roommate_quotes/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">大学舍友语录集</div>
+    <a href="/2022/01/22/dff2flac/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CD转码</div>
       <i class="icon-circle-right"></i>
     </a>
   

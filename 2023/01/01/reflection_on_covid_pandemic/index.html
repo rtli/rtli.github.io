@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://rtli.github.io">
-  <title>Git | Rtli&#39;s Blog</title>
+  <title>新冠三年反思 | Rtli&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="GitHub 的 Pull Request 和 GitLab 的 Merge Request 实际上是一个东西">
+  <meta name="description" content="中国的防疫措施因时因势做出调整至今已有一个月了，我想是时候回顾一下过去的这三年，这新冠病毒的三年。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git">
-<meta property="og:url" content="https://rtli.github.io/2021/05/09/about_git/index.html">
+<meta property="og:title" content="新冠三年反思">
+<meta property="og:url" content="https://rtli.github.io/2023/01/01/reflection_on_covid_pandemic/index.html">
 <meta property="og:site_name" content="Rtli&#39;s Blog">
-<meta property="og:description" content="GitHub 的 Pull Request 和 GitLab 的 Merge Request 实际上是一个东西">
+<meta property="og:description" content="中国的防疫措施因时因势做出调整至今已有一个月了，我想是时候回顾一下过去的这三年，这新冠病毒的三年。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-09T10:14:32.000Z">
-<meta property="article:modified_time" content="2023-01-01T03:41:41.343Z">
+<meta property="article:published_time" content="2023-01-01T03:43:47.000Z">
+<meta property="article:modified_time" content="2023-05-02T04:12:14.886Z">
 <meta property="article:author" content="Rtli">
-<meta property="article:tag" content="tech">
+<meta property="article:tag" content="杂谈">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Rtli&#39;s Blog" type="application/atom+xml">
@@ -141,52 +141,53 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-about_git" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-reflection_on_covid_pandemic" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Git
+      新冠三年反思
     </h1>
   
 
         
-        <a href="/2021/05/09/about_git/" class="archive-article-date">
-  	<time datetime="2021-05-09T10:14:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-09</time>
+        <a href="/2023/01/01/reflection_on_covid_pandemic/" class="archive-article-date">
+  	<time datetime="2023-01-01T03:43:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-01-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="GitHub-的-Pull-Request-和-GitLab-的-Merge-Request-实际上是一个东西">GitHub 的 Pull Request 和 GitLab 的 Merge Request 实际上是一个东西</h4>
+        <p>中国的防疫措施<code>因时因势</code>做出调整至今已有一个月了，我想是时候回顾一下过去的这三年，这新冠病毒的三年。</p>
+<ul>
+<li>
 <span id="more"></span>
-<h3 id="基本版本管理">基本版本管理</h3>
-<p>版本回退使用 <code>git reset  commit_id</code> 来回退版本</p>
-<p>添加文件到暂存区: <code>git add filename</code>, 通常直接使用 <code>git add .</code> 添加所有有修改的文件</p>
-<p>提交暂存区文件到版本库: <code>git commit -m &quot;comments&quot;</code></p>
-<p>当执行 <code>git commit</code> 后仍需本地修改，可在修改完后执行 <code>git add . &amp;&amp; git commit --amend</code> 以使得修改合并入一个 commit 记录中。</p>
-<h3 id="关于撤销">关于撤销</h3>
-<p>改乱了工作区某个文件的内容，想直接丢弃工作区的修改时。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout `filename`</span><br></pre></td></tr></table></figure>
-<p>不但改乱了工作区某个文件的内容，还添加到了暂存区。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD `filename`</span><br><span class="line">git checkout `filename`</span><br></pre></td></tr></table></figure>
-<p>在自己的分支上写东西的时候 master 上有更新</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git pull origin master</span><br><span class="line">git checkout `your_branch`</span><br><span class="line">git rebase master</span><br></pre></td></tr></table></figure>
-<p>暂存修改</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br><span class="line">git stash pop</span><br></pre></td></tr></table></figure>
-<h3 id="和远端库交互">和远端库交互</h3>
-<p>把本地库的内容推送到远端，用git push命令，实际上是把当前分支master推送到远端。如 <code>git push -u origin master</code></p>
-<p>自动设置远端分支: <code>git config --global push.default current</code></p>
-<p>修改远端仓库的地址: <code>git remote set-url origin new.git.url/here</code></p>
-<p>把远端库的内容克隆到本地，用git clone命令。git clone <a href="mailto:git@github.com">git@github.com</a>:xxxx/xxxx.git</p>
-<p>查看远端仓库地址: <code>git remote -v</code></p>
-<h3 id="其他技巧">其他技巧</h3>
-<p>使用 <code>git reflog</code> 查看操作记录，<code>git log</code> 查看提交记录。</p>
-<p>设置命令别名: <code> git config --global alias.co checkout</code></p>
-<p>查看所有配置: <code>git config --list</code></p>
+</li>
+</ul>
+<p>于我而言，这三年大致可分为这样几个阶段：风暴前的平静 (2019.12 - 2020.1)、完全的居家生活 (2020.2 - 2020.4)、逐步回归正常生活 (2020.4 - 2020.7)、正常生活阶段 (2020.8 - 2022.1)、omicron 阶段 (2022.2 - 2022.7)、与世隔绝的生活 (2022.7 - 2022.9)、与疫情保持距离 (2022.9 - 2022.10)、严格防疫阶段 (2022.11 - 2022.12)、社会面放开 (2022.12 - )</p>
+<h3 id="风暴前的平静">风暴前的平静</h3>
+<blockquote>
+<p>2019.12 - 2020.1</p>
+</blockquote>
+<p>一九年底，我结束了比较痛苦的期末周，所幸没有科目亮起红灯。次年一月上旬，我乘坐普快列车摇回了家：疫情爆发后，学校要统计1月10日后途径或到访过武汉的同学——在1月9日的 23:25，我乘的火车在武昌火车站缓缓停下。</p>
+<p>火车抵达后的半个小时，我就和朋友们坐在了火锅店里。在回家后的短短的十天里，我接待了从省府而来的友人、回了一趟母校做宣讲、与老朋友们一同参与了例行的火锅民宿活动、去大疆客服中心修云台。</p>
+<blockquote>
+<p>我在翻相册的时候都不禁感叹：活动真的有这么频繁么？</p>
+</blockquote>
+<p>在武汉宣布封城的三天前，我和家人一起去批发市场采购年货。在生鲜市场里，我惊恐地刷着微博热搜，然后晚上就和在华科读书的朋友去吃饭了，甚至还发了一条朋友圈… 那之后的十几天，我们时不时会相互确认一下身体情况。那年的大年三十过得实在冷寂，这座移民城市根本无从谈起“年味”，而未知的瘟疫给人带来的恐慌更是雪上加霜。</p>
+<h3 id="完全的居家生活">完全的居家生活</h3>
+<blockquote>
+<p>更新于 230304/0401</p>
+<p>2020.2 - 2020.4</p>
+</blockquote>
+<p>居家生活突如其来，现在的我对当时的记忆已经渐渐淡去，只能三两笔描绘出个轮廓。每天基本上就是吃了睡、睡了吃；再在网上和朋友们聊聊天、看看视频，这样的生活听起来如学生时代没有作业的周末般惬意，但实际上并不如此，未知的病毒给我彼时的生活蒙上了一层阴影，我时不时就会看看社会新闻和疫情地图(另: 直到 2022 年中旬，家附近方圆一公里都没有疫情关联场所)，看似稀松平常的娱乐消遣，反而只是焦虑情绪的泄压阀。我记得有一天实在太害怕，翻出体温计量了一下体温，结果自然是没有发烧。</p>
+<p>这段时间的食物供给全靠沃尔玛的在线商城，大概一周购买一次。接到外卖员电话之后，我就要拖着小推车，戴着口罩并佩戴手套下楼了。不过随着形势的逐渐好转，商城里卖的东西也逐渐丰富了起来。</p>
+<h3 id="暴露出来的问题">暴露出来的问题</h3>
+<hr>
+<p>230115: 真的很讨厌不确定性，回到自己的房间了还要竖起耳朵观察同住人的随机动向，还是郊野好啊，或者说，还是独居好啊。</p>
 
       
 
@@ -200,7 +201,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">tech</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂谈</a>
         		</li>
       		
 		</ul>
@@ -256,7 +257,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://rtli.github.io/2021/05/09/about_git/" alt="微信分享二维码">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://rtli.github.io/2023/01/01/reflection_on_covid_pandemic/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -270,18 +271,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/05/15/mental_state/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          偶感
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/05/05/roommate_quotes/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">大学舍友语录集</div>
+    <a href="/2022/04/03/sync_solution/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">博客的同步方法</div>
       <i class="icon-circle-right"></i>
     </a>
   
